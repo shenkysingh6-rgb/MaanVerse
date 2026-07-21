@@ -3,117 +3,471 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaanVerse | Official Music Label</title>
+    <title>MaanVerse | Official Music Label & Talent Hub</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
         body {
-            background-color: #050505;
+            background-color: #0b0b0b;
             color: #ffffff;
-            text-align: center;
             overflow-x: hidden;
         }
-        header {
-            padding: 80px 20px 40px 20px;
-            background: linear-gradient(180deg, #1a0000 0%, #050505 100%);
-            border-bottom: 2px solid #cc0000;
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 11, 11, 0.95);
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            z-index: 1000;
         }
-        h1 {
-            font-size: 3.5rem;
-            color: #ffffff;
-            letter-spacing: 4px;
+        .logo {
+            font-size: 1.8rem;
             font-weight: 900;
-        }
-        h1 span {
-            color: #ff0000;
-        }
-        p.tagline {
-            font-size: 1.2rem;
-            color: #cccccc;
-            margin-top: 15px;
-            text-transform: uppercase;
+            color: #fff;
             letter-spacing: 2px;
         }
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-        .card {
-            background: #111111;
-            margin: 30px 0;
-            padding: 40px 30px;
-            border-radius: 12px;
-            border: 1px solid #222;
-            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.05);
-            transition: 0.3s ease;
-        }
-        .card:hover {
-            border-color: #ff0000;
-            transform: translateY(-5px);
-        }
-        .card h2 {
+        .logo span {
             color: #ff0000;
-            margin-bottom: 15px;
-            font-size: 2rem;
-            letter-spacing: 1px;
         }
-        .card p {
-            color: #b0b0b0;
-            font-size: 1.1rem;
-            line-height: 1.6;
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
         }
-        .btn {
-            display: inline-block;
+        .nav-links a {
+            text-decoration: none;
+            color: #ccc;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ff0000;
+        }
+        .reg-btn-top {
             background: #ff0000;
-            color: #ffffff;
-            padding: 14px 35px;
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 4px;
-            margin-top: 20px;
-            letter-spacing: 1px;
-            transition: 0.2s;
+            transition: 0.3s;
         }
-        .btn:hover {
+        .reg-btn-top:hover {
             background: #cc0000;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
         }
-        footer {
-            margin-top: 80px;
+
+        /* Hero Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(20,0,0,0.9) 0%, rgba(11,11,11,1) 100%);
+            border-bottom: 2px solid #cc0000;
+            padding: 120px 20px 60px 20px;
+        }
+        header h1 {
+            font-size: 4rem;
+            color: #fff;
+            letter-spacing: 3px;
+            font-weight: 900;
+        }
+        header h1 span {
+            color: #ff0000;
+        }
+        header p.subtitle {
+            font-size: 1.3rem;
+            color: #ff4d4d;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        header p.tagline {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 700px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff0000;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* About Us Box */
+        .about-box {
+            background: #141414;
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid #222;
+            line-height: 1.8;
+            color: #ccc;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        /* Categories Grid (6 Cards) */
+        .grid-6 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .cat-card {
+            background: #141414;
+            padding: 35px 25px;
+            border-radius: 10px;
+            border: 1px solid #222;
+            transition: 0.3s ease;
+        }
+        .cat-card:hover {
+            border-color: #ff0000;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.1);
+        }
+        .cat-card h3 {
+            color: #ff0000;
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+        .cat-card p {
+            color: #bbb;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .journey-box {
+            font-size: 0.88rem;
+            color: #ddd;
+            background: #1f0505;
+            padding: 12px;
+            border-left: 3px solid #ff0000;
+            border-radius: 4px;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        /* Why MaanVerse & Selection Process Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .info-card {
+            background: #141414;
             padding: 30px;
-            color: #666;
-            font-size: 0.9rem;
+            border-radius: 10px;
+            border: 1px solid #222;
+        }
+        .info-card h3 {
+            color: #ff0000;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        .info-card p {
+            color: #bbb;
+            line-height: 1.6;
+        }
+
+        /* Selection Process Yellow Box */
+        .process-box {
+            background: #e6b800;
+            color: #000;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin: 40px 0;
+        }
+        .process-box h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        .process-steps {
+            font-size: 1.1rem;
+            line-height: 2.2;
+        }
+
+        /* Big Register Button Section */
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #0b0b0b 0%, #1a0000 100%);
+            border-radius: 10px;
+            margin: 40px 0;
+            border: 1px solid #330000;
+        }
+        .big-btn {
+            display: inline-block;
+            background: #ff0000;
+            color: #fff;
+            padding: 16px 45px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+        }
+        .big-btn:hover {
+            background: #cc0000;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: #050505;
+            color: #888;
+            padding: 60px 40px 20px 40px;
             border-top: 1px solid #1a1a1a;
+        }
+        .footer-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a {
+            text-decoration: none;
+            color: #888;
+            transition: 0.3s;
+        }
+        .footer-col ul li a:hover {
+            color: #ff0000;
+        }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #151515;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">MAAN<span>VERSE</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#why-us">Why MaanVerse</a></li>
+        </ul>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-xAqmofNzKkrCZknpLMFWqt3e5mKrBG1STG4VPCIecWpF6A/viewform?usp=header" target="_blank" class="reg-btn-top">Register Now</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home">
         <h1>MAAN<span>VERSE</span></h1>
-        <p class="tagline">Music Label & Multi-Disciplinary Talent Hub</p>
+        <p class="subtitle">Talent Hunt 2026</p>
+        <p class="tagline">India's Next Stage for Talent. Showcase your talent in front of the MaanVerse Music company. Perform live, get discovered, and win a chance to feature in official projects.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-xAqmofNzKkrCZknpLMFWqt3e5mKrBG1STG4VPCIecWpF6A/viewform?usp=header" target="_blank" class="big-btn">REGISTER NOW</a>
     </header>
 
     <div class="container">
-        <div class="card">
-            <h2>WELCOME TO THE MOVEMENT</h2>
-            <p>Discovering raw talent, engineering high-impact Trap, rap, and Punjabi tracks, and launching the next generation of icons from studio to stage.</p>
-            <a href="#projects" class="btn">STREAM NOW</a>
+
+        <!-- About Us Section -->
+        <section id="about">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-box">
+                <p>MaanVerse is a premier talent discovery and artist development company dedicated to finding, nurturing, and promoting the next generation of creative talent. We believe that true talent deserves opportunity—not just connections. Whether you are a Singer, Dancer, Model, Actor, Rapper, or Writer, MaanVerse provides a platform where your skills are recognized and transformed into real career opportunities. Our mission is to discover hidden talent, develop artists professionally, and bring their creativity from imagination to the screen through music videos, live performances, web series, films, and ads. At MaanVerse, we don't just discover talent; we build artists from the ground to the sky.</p>
+            </div>
+        </section>
+
+        <!-- Categories Section (6 Cards) -->
+        <section id="categories">
+            <h2 class="section-title">Choose Your Stage (Categories)</h2>
+            <div class="grid-6">
+                
+                <!-- Models -->
+                <div class="cat-card">
+                    <h3>Models</h3>
+                    <p>Walk the runway, feature in high-end campaigns, and build a powerful modeling portfolio.</p>
+                    <div class="journey-box">
+                        <strong>How MaanVerse Helps:</strong> High-fashion styling & portfolio shoots, runway training, and direct casting selections for fashion shows and commercial ads.
+                    </div>
+                </div>
+
+                <!-- Actors -->
+                <div class="cat-card">
+                    <h3>Actors</h3>
+                    <p>Master screen presence, emotional depth, and character building for cinema and digital screens.</p>
+                    <div class="journey-box">
+                        <strong>How MaanVerse Helps:</strong> Professional acting workshops, screen testing, and direct placement in web series, music video stories, and films.
+                    </div>
+                </div>
+
+                <!-- Singers -->
+                <div class="cat-card">
+                    <h3>Singers</h3>
+                    <p>Get discovered and perform on bigger stages with professional vocal engineering and releases.</p>
+                    <div class="journey-box">
+                        <strong>How MaanVerse Helps:</strong> Vocal training, professional studio recording & mixing, and official music label song releases with worldwide distribution.
+                    </div>
+                </div>
+
+                <!-- Dancers -->
+                <div class="cat-card">
+                    <h3>Dancers</h3>
+                    <p>Transform raw street moves into professional choreography and lead stage performances.</p>
+                    <div class="journey-box">
+                        <strong>How MaanVerse Helps:</strong> Advanced choreography bootcamps, official music video lead dancer spots, and live corporate & stage show tours.
+                    </div>
+                </div>
+
+                <!-- Rappers -->
+                <div class="cat-card">
+                    <h3>Rappers</h3>
+                    <p>Express your raw style, lyrical flow, and create heavy-hitting Trap and Hip-Hop anthems.</p>
+                    <div class="journey-box">
+                        <strong>How MaanVerse Helps:</strong> Beat production & arrangement support, rhyme delivery training, studio recording, and high-impact music video launches.
+                    </div>
+                </div>
+
+                <!-- Writers -->
+                <div class="cat-card">
+                    <h3>Writers</h3>
+                    <p>Turn your powerful stories, poetry, and song lyrics into visual productions and scripts.</p>
+                    <div class="journey-box">
+                        <strong>How MaanVerse Helps:</strong> Scriptwriting guidance, song lyric integration into music label projects, and credit/recognition across media platforms.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Why MaanVerse & Selection Process -->
+        <section id="why-us">
+            <h2 class="section-title">Why MaanVerse?</h2>
+            <div class="grid-2">
+                <div class="info-card">
+                    <h3>Professional Training</h3>
+                    <p>We develop your skills with expert guidance, practical training, and performance-focused coaching designed to help you grow with absolute confidence.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Real Project Opportunities</h3>
+                    <p>Selected artists are considered for music videos, web series, films, advertisements, live shows, and fashion events based on project requirements and exact talent fit.</p>
+                </div>
+            </div>
+
+            <!-- Selection Process Box -->
+            <div class="process-box">
+                <h3>Our Selection Process</h3>
+                <div class="process-steps">
+                    1. Register (Submit your profile via Google Form)<br>
+                    ↓<br>
+                    2. Audition (Showcase your raw talent)<br>
+                    ↓<br>
+                    3. Screening (Evaluation by industry experts)<br>
+                    ↓<br>
+                    4. Training (Grooming and skill enhancement)<br>
+                    ↓<br>
+                    5. Projects (Direct launch on screen & stage)
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Registration CTA -->
+        <div class="cta-section">
+            <h2 style="color: #fff; font-size: 2rem; margin-bottom: 10px;">Take Your First Step Towards Stardom</h2>
+            <p style="color: #bbb; max-width: 600px; margin: 0 auto;">Don't let your talent stay hidden in the shadows. Register now and let MaanVerse guide you to the spotlight.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-xAqmofNzKkrCZknpLMFWqt3e5mKrBG1STG4VPCIecWpF6A/viewform?usp=header" target="_blank" class="big-btn">REGISTER NOW</a>
         </div>
 
-        <div class="card">
-            <h2>UPCOMING ALBUM: DASTAK</h2>
-            <p>A multi-genre sonic experience featuring high-energy street dance anthems and soulful romantic melodies. Get ready for the takeover.</p>
-        </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 MaanVerse. All Rights Reserved.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSd-xAqmofNzKkrCZknpLMFWqt3e5mKrBG1STG4VPCIecWpF6A/viewform?usp=header" target="_blank">Registration</a></li>
+                    <li><a href="#why-us">Why MaanVerse</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#categories">Models</a></li>
+                    <li><a href="#categories">Actors</a></li>
+                    <li><a href="#categories">Singers</a></li>
+                    <li><a href="#categories">Dancers</a></li>
+                    <li><a href="#categories">Rappers</a></li>
+                    <li><a href="#categories">Writers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/maanverse_official?igsh=ejJwdDJleWhnMHA1&utm_source=qr" target="_blank">Instagram</a></li>
+                    <li><a href="https://youtube.com/@maanverseofficial?si=bQCnHjR5gV3o-iJu" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.facebook.com/share/1CX8s5sHpz/?mibextid=wwXIfr" target="_blank">Facebook</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:maanverseofficial@gmail.com">maanverseofficial@gmail.com</a></li>
+                    <li style="color: #888; margin-top: 10px;">Delhi, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MaanVerse. All Rights Reserved.</p>
+        </div>
     </footer>
 
 </body>
