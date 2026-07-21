@@ -18,26 +18,27 @@
             overflow-x: hidden;
         }
 
-        /* Navigation Bar */
+        /* Navigation Bar - Mobile Friendly */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(11, 11, 11, 0.95);
+            background: rgba(11, 11, 11, 0.98);
             border-bottom: 1px solid #222;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 40px;
+            padding: 12px 20px;
             z-index: 1000;
+            flex-wrap: wrap;
         }
         .logo-container img {
-            height: 45px;
+            height: 35px;
             width: auto;
             display: block;
         }
         .logo-text {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 900;
             color: #fff;
             letter-spacing: 2px;
@@ -48,13 +49,14 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         .nav-links a {
             text-decoration: none;
             color: #ccc;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             transition: 0.3s;
         }
         .nav-links a:hover {
@@ -63,17 +65,18 @@
         .reg-btn-top {
             background: #ff0000;
             color: #fff;
-            padding: 10px 22px;
+            padding: 8px 15px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 0.85rem;
             transition: 0.3s;
         }
         .reg-btn-top:hover {
             background: #cc0000;
         }
 
-        /* Hero Section with Banner Image Background */
+        /* Hero Section */
         header {
             min-height: 100vh;
             display: flex;
@@ -81,24 +84,24 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(180deg, rgba(11,11,11,0.85) 0%, rgba(11,11,11,0.95) 100%), url('hero-banner.jpg');
+            background: linear-gradient(180deg, rgba(11,11,11,0.7) 0%, rgba(11,11,11,0.95) 100%), url('hero-banner.jpg');
             background-size: cover;
             background-position: center;
             border-bottom: 2px solid #cc0000;
-            padding: 140px 20px 60px 20px;
+            padding: 120px 20px 50px 20px;
         }
         header h1 {
-            font-size: 4rem;
+            font-size: 3rem;
             color: #fff;
             letter-spacing: 3px;
             font-weight: 900;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+            text-shadow: 0 5px 15px rgba(0,0,0,0.9);
         }
         header h1 span {
             color: #ff0000;
         }
         header p.subtitle {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: #ff4d4d;
             margin-top: 10px;
             letter-spacing: 2px;
@@ -106,7 +109,7 @@
             font-weight: bold;
         }
         header p.tagline {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             color: #ccc;
             max-width: 700px;
             margin: 20px auto;
@@ -117,19 +120,19 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         section {
-            padding: 60px 0;
+            padding: 50px 0;
             border-bottom: 1px solid #1a1a1a;
         }
 
         h2.section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #ff0000;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
@@ -137,20 +140,20 @@
         /* About Us Box */
         .about-box {
             background: #141414;
-            padding: 40px;
+            padding: 30px;
             border-radius: 10px;
             border: 1px solid #222;
             line-height: 1.8;
             color: #ccc;
-            font-size: 1.1rem;
+            font-size: 1rem;
             text-align: center;
         }
 
         /* Categories Grid */
         .grid-6 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
         .cat-card {
             background: #141414;
@@ -166,26 +169,27 @@
         }
         .cat-img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
             border-bottom: 1px solid #222;
+            background: #222; /* Fallback if image fails */
         }
         .cat-content {
-            padding: 25px;
+            padding: 20px;
         }
         .cat-card h3 {
             color: #ff0000;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 10px;
         }
         .cat-card p {
             color: #bbb;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            line-height: 1.5;
             margin-bottom: 15px;
         }
         .journey-box {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: #ddd;
             background: #1f0505;
             padding: 10px;
@@ -197,66 +201,67 @@
         /* Why MaanVerse & Selection Process Grid */
         .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
         .info-card {
             background: #141414;
-            padding: 30px;
+            padding: 25px;
             border-radius: 10px;
             border: 1px solid #222;
         }
         .info-card h3 {
             color: #ff0000;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
         }
         .info-card p {
             color: #bbb;
             line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* Selection Process Yellow Box */
         .process-box {
             background: #e6b800;
             color: #000;
-            padding: 40px;
+            padding: 30px 20px;
             border-radius: 10px;
             text-align: center;
             font-weight: bold;
-            margin: 40px 0;
+            margin: 30px 0;
         }
         .process-box h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
             color: #000;
         }
         .process-steps {
-            font-size: 1.1rem;
-            line-height: 2.2;
+            font-size: 1rem;
+            line-height: 2;
         }
 
         /* Big Register Button Section */
         .cta-section {
             text-align: center;
-            padding: 60px 20px;
+            padding: 50px 20px;
             background: linear-gradient(180deg, #0b0b0b 0%, #1a0000 100%);
             border-radius: 10px;
-            margin: 40px 0;
+            margin: 30px 0;
             border: 1px solid #330000;
         }
         .big-btn {
             display: inline-block;
             background: #ff0000;
             color: #fff;
-            padding: 16px 45px;
-            font-size: 1.2rem;
+            padding: 14px 35px;
+            font-size: 1.1rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 5px;
             letter-spacing: 1px;
             transition: 0.3s;
-            margin-top: 20px;
+            margin-top: 15px;
             box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
         }
         .big-btn:hover {
@@ -268,32 +273,33 @@
         footer {
             background: #050505;
             color: #888;
-            padding: 60px 40px 20px 40px;
+            padding: 50px 20px 20px 20px;
             border-top: 1px solid #1a1a1a;
         }
         .footer-grid {
             max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
         }
         .footer-col h4 {
             color: #fff;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-size: 1rem;
             letter-spacing: 1px;
         }
         .footer-col ul {
             list-style: none;
         }
         .footer-col ul li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .footer-col ul li a {
             text-decoration: none;
             color: #888;
+            font-size: 0.9rem;
             transition: 0.3s;
         }
         .footer-col ul li a:hover {
@@ -302,8 +308,8 @@
         .footer-bottom {
             text-align: center;
             border-top: 1px solid #151515;
-            padding-top: 20px;
-            font-size: 0.9rem;
+            padding-top: 15px;
+            font-size: 0.85rem;
             color: #666;
         }
     </style>
@@ -318,11 +324,11 @@
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#categories">Categories</a></li>
-            <li><a href="#why-us">Why MaanVerse</a></li>
+            <li><a href="#why-us">Why Us</a></li>
         </ul>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-xAqmofNzKkrCZknpLMFWqt3e5mKrBG1STG4VPCIecWpF6A/viewform?usp=header" target="_blank" class="reg-btn-top">Register Now</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-xAqmofNzKkrCZknpLMFWqt3e5mKrBG1STG4VPCIecWpF6A/viewform?usp=header" target="_blank" class="reg-btn-top">Register</a>
     </nav>
 
     <!-- Hero Section -->
@@ -345,12 +351,12 @@
 
         <!-- Categories Section with Images -->
         <section id="categories">
-            <h2 class="section-title">Choose Your Stage (Categories)</h2>
+            <h2 class="section-title">Choose Your Stage</h2>
             <div class="grid-6">
                 
                 <!-- Models -->
                 <div class="cat-card">
-                    <img src="model.jpg" alt="Models" class="cat-img">
+                    <img src="model.jpg" alt="Models" class="cat-img" onerror="this.src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&auto=format&fit=crop&q=60';">
                     <div class="cat-content">
                         <h3>Models</h3>
                         <p>Walk the runway, feature in high-end campaigns, and build a powerful modeling portfolio.</p>
@@ -362,7 +368,7 @@
 
                 <!-- Actors -->
                 <div class="cat-card">
-                    <img src="actor.jpg" alt="Actors" class="cat-img">
+                    <img src="actor.jpg" alt="Actors" class="cat-img" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60';">
                     <div class="cat-content">
                         <h3>Actors</h3>
                         <p>Master screen presence, emotional depth, and character building for cinema and digital screens.</p>
@@ -374,7 +380,7 @@
 
                 <!-- Singers -->
                 <div class="cat-card">
-                    <img src="singer.jpg" alt="Singers" class="cat-img">
+                    <img src="singer.jpg" alt="Singers" class="cat-img" onerror="this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=500&auto=format&fit=crop&q=60';">
                     <div class="cat-content">
                         <h3>Singers</h3>
                         <p>Get discovered and perform on bigger stages with professional vocal engineering and releases.</p>
@@ -386,7 +392,7 @@
 
                 <!-- Dancers -->
                 <div class="cat-card">
-                    <img src="dancer.jpg" alt="Dancers" class="cat-img">
+                    <img src="dancer.jpg" alt="Dancers" class="cat-img" onerror="this.src='https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=500&auto=format&fit=crop&q=60';">
                     <div class="cat-content">
                         <h3>Dancers</h3>
                         <p>Transform raw street moves into professional choreography and lead stage performances.</p>
@@ -398,7 +404,7 @@
 
                 <!-- Rappers -->
                 <div class="cat-card">
-                    <img src="rapper.jpg" alt="Rappers" class="cat-img">
+                    <img src="rapper.jpg" alt="Rappers" class="cat-img" onerror="this.src='https://images.unsplash.com/photo-1571266028243-3716f02d2d2e?w=500&auto=format&fit=crop&q=60';">
                     <div class="cat-content">
                         <h3>Rappers</h3>
                         <p>Express your raw style, lyrical flow, and create heavy-hitting Trap and Hip-Hop anthems.</p>
@@ -410,7 +416,7 @@
 
                 <!-- Writers -->
                 <div class="cat-card">
-                    <img src="writer.jpg" alt="Writers" class="cat-img">
+                    <img src="writer.jpg" alt="Writers" class="cat-img" onerror="this.src='https://images.unsplash.com/photo-1455390582262-044cdead277a?w=500&auto=format&fit=crop&q=60';">
                     <div class="cat-content">
                         <h3>Writers</h3>
                         <p>Turn your powerful stories, poetry, and song lyrics into visual productions and scripts.</p>
@@ -456,8 +462,8 @@
 
         <!-- Bottom Registration CTA -->
         <div class="cta-section">
-            <h2 style="color: #fff; font-size: 2rem; margin-bottom: 10px;">Take Your First Step Towards Stardom</h2>
-            <p style="color: #bbb; max-width: 600px; margin: 0 auto;">Don't let your talent stay hidden in the shadows. Register now and let MaanVerse guide you to the spotlight.</p>
+            <h2 style="color: #fff; font-size: 1.8rem; margin-bottom: 10px;">Take Your First Step Towards Stardom</h2>
+            <p style="color: #bbb; max-width: 600px; margin: 0 auto; font-size: 0.95rem;">Don't let your talent stay hidden in the shadows. Register now and let MaanVerse guide you to the spotlight.</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-xAqmofNzKkrCZknpLMFWqt3e5mKrBG1STG4VPCIecWpF6A/viewform?usp=header" target="_blank" class="big-btn">REGISTER NOW</a>
         </div>
 
